@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Shiv Computer - Auto Skip & Ad Blocker",
+  "version": "1.2",
+  "description": "Professional YouTube ad skipper and blocker engineered by Shiv Computer.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
